@@ -23,9 +23,7 @@
 			<directory />
 			<includes>
 				<include>.gitignore</include>
-				<include>gitignore</include>
 				<include>maven-version-rules.xml</include>
-				<include>Note.txt</include>
 			</includes>
 		</fileSet>
 

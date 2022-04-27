@@ -16,6 +16,7 @@
 	<version>${version}</version>
 
 	<name>${artifactId}</name>
+	<description>Simple Spring Boot Application with Apache Wicket</description>
 
 	<repositories>
 		<repository>
