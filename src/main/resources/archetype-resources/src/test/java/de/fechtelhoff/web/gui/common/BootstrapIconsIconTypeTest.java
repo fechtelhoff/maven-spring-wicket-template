@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import io.github.classgraph.ClassGraph;
 import io.github.classgraph.Resource;
+import io.github.classgraph.ScanResult;
 
 /**
  * Dieser Test erzeugt aus der über WebJars eingebunden Resource der Bootstrap-Icons automatische
