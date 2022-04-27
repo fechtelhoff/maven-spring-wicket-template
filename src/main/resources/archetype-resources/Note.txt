@@ -1,0 +1,7 @@
+Because of a Maven Bug a file like ".gitignore" will not be copied automatically.
+Whatever there are several descriptions of this problem on the web and also some workarounds that does not work.
+
+Therefore, the ".gitignore" file will be copied/created without the leading dot.
+It is up to you to rename the file "gitignore" to ".gitignore" ...
+
+After that feel free to delete this file.
