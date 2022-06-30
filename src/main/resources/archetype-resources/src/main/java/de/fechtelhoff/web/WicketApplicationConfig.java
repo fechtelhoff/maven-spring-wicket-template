@@ -16,6 +16,10 @@ public class WicketApplicationConfig implements WicketApplicationInitConfigurati
 
 	@Override
 	public void init(final WebApplication webApplication) {
+		//  Content Security Policy
+//		webApplication.getCspSettings().blocking().disabled();
+//		webApplication.getCspSettings().blocking().unsafeInline();
+
 		initializeBootstrap(webApplication);
 		mountPages(webApplication);
 	}
