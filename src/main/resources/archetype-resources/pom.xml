@@ -47,7 +47,7 @@
 		<!-- General-->
 		<version.apache.commons-lang>3.12.0</version.apache.commons-lang>
 		<version.org.mapstruct>1.5.2.Final</version.org.mapstruct>
-		<version.classgraph>4.8.147</version.classgraph>
+		<version.classgraph>4.8.149</version.classgraph>
 
 		<!-- Wicket & Co. -->
 		<version.wicket-spring-boot-starter>3.1.6</version.wicket-spring-boot-starter>
