@@ -5,11 +5,13 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 import org.apache.wicket.request.resource.ResourceReference;
+import org.apache.wicket.util.tester.WicketTester;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import de.fechtelhoff.web.gui.WicketTestApplication;
 import io.github.classgraph.ClassGraph;
 import io.github.classgraph.Resource;
 import io.github.classgraph.ScanResult;
@@ -24,16 +26,24 @@ import io.github.classgraph.ScanResult;
 @Disabled
 class BootstrapIconsIconTypeTest {
 
-	public static final String SPACE = " ";
-	public static final String QUOTATION_MARK = "\"";
+	private static final String SPACE = " ";
+	private static final String QUOTATION_MARK = "\"";
+
+	@SuppressWarnings({"FieldCanBeLocal", "unused"})
+	private WicketTester tester;
+
+	@BeforeEach
+	void setUp() {
+		tester = new WicketTester(new WicketTestApplication());
+	}
 
 	@Test
 	void test() throws IOException {
 		final ResourceReference resourceReference = BootstrapIconsCssResourceReference.getInstance();
-		final Optional<Resource> optionalResource = getResource(resourceReference);
-		Assertions.assertTrue(optionalResource.isPresent());
 
-		final List<String> cssFileContent = loadResourceContent(optionalResource.get());
+		final List<String> cssFileContent = getResourceContent(resourceReference);
+		Assertions.assertNotNull(cssFileContent);
+		Assertions.assertFalse(cssFileContent.isEmpty());
 
 		final List<String> cssElements = cssFileContent.stream()
 			.filter(e -> e.startsWith(".bi-"))
@@ -93,14 +103,16 @@ class BootstrapIconsIconTypeTest {
 	}
 
 	/**
-	 * Ermittelt aus einer Resource Referenz die tatsächliche Resource.
+	 * Ermittelt aus einer Resource Referenz die tatsächliche Resource und läd den Inhalt als String-Liste.
 	 */
-	private Optional<Resource> getResource(final ResourceReference resourceReference) {
+	private List<String> getResourceContent(final ResourceReference resourceReference) throws IOException {
 		final String resourceReferenceName = resourceReference.getName();
 		try (final ScanResult scanResult = new ClassGraph().enableAllInfo().scan()) {
-			return scanResult.getAllResources().stream()
-				.filter(resource -> resource.toString().endsWith(resourceReferenceName))
-				.findFirst();
+			final Resource resource = scanResult.getAllResources().stream()
+				.filter(r -> r.toString().endsWith(resourceReferenceName))
+				.findFirst()
+				.orElse(null);
+			return loadResourceContent(resource);
 		}
 	}
 }

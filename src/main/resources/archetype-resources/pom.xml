@@ -57,7 +57,7 @@
 		<!-- Wicket Bootstrap Version 6.0.0-M7 -> Bootstrap Version 5.1.3 - scheint nicht fehlerfrei zu funktionieren. -->
 		<version.wicket.bootstrap>5.0.6</version.wicket.bootstrap>
 
-		<version.bootstrap-icons>1.8.3</version.bootstrap-icons>
+		<version.bootstrap-icons>1.9.1</version.bootstrap-icons>
 
 		<!-- ================================================================================== -->
 		<!-- Plugins -->
