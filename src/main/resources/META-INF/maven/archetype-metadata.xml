@@ -6,9 +6,30 @@
 	name="maven-template">
 
 	<fileSets>
-		<!-- Source-->
+		<!-- Main Sources-->
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>src/main/java</directory>
+			<excludes>
+				<!-- Do not filter binary files -->
+				<exclude>**/*.png</exclude>
+			</excludes>
+		</fileSet>
+		<fileSet packaged="true">
+			<directory>src/main/java</directory>
+			<includes>
+				<!-- Copy Images -->
+				<include>**/*.png</include>
+			</includes>
+		</fileSet>
+
+		<!-- Resources Folder -->
 		<fileSet filtered="true" encoding="UTF-8">
-			<directory>src</directory>
+			<directory>src/main/resources</directory>
+		</fileSet>
+
+		<!-- Test Sources-->
+		<fileSet filtered="true" packaged="true" encoding="UTF-8">
+			<directory>src/test/java</directory>
 		</fileSet>
 
 		<!-- Root -->
