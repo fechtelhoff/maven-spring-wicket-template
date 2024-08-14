@@ -28,7 +28,6 @@ public class HeaderPanel extends Panel {
 		navbar.setBrandImage(LogoResourceReference.INSTANCE, Model.of("Project Logo"));
 		navbar.setBackgroundColor(BackgroundColorBehavior.Color.Primary);
 		navbar.addComponents(getNavbarEntries());
-
 		add(navbar);
 	}
 
@@ -36,7 +35,7 @@ public class HeaderPanel extends Panel {
 		return Arrays.stream(NavbarEntries.values())
 			.map(entry ->
 				NavbarComponents.transform(
-					Navbar.ComponentPosition.LEFT,
+					entry.getPosition(),
 					new NavbarButton<Void>(entry.getPage(), Model.of(entry.getLabel()))
 				)
 			)
