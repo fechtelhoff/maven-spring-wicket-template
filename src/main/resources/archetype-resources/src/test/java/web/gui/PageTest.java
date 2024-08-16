@@ -36,7 +36,7 @@ class PageTest {
 
 	@ParameterizedTest
 	@EnumSource(PageToBeTested.class)
-	void homepageRendersSuccessfully(final PageToBeTested pageToBeTested) {
+	void pageRendersSuccessfully(final PageToBeTested pageToBeTested) {
 		final WebPage page  = pageToBeTested.getSupplier().get();
 
 		//start and render the test page

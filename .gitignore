@@ -1,12 +1,12 @@
-# Verzeichnissen
+# Verzeichnisse
 .git
 .idea
 out
 target
 
 # Dateien
-*.iml
 *.bak
 *.csv
-*.sql
-rebel.xml
+*.env
+*.iml
+*.log

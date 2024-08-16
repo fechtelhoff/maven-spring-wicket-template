@@ -1,15 +1,17 @@
 #!/bin/bash
 
+SCRIPTNAME=$(basename "$0")
+
 echo
 echo "###############################################################################"
-echo "# Start - $(basename "$0") ($0)"
+echo "# Start - ${SCRIPTNAME} ($0)"
 echo "###############################################################################"
 echo
 
 Help()
 {
    echo "Usage:"
-   echo "  create-wicket-spring [options] | <groupId> <artifactId> <packageName>"
+   echo "  ${SCRIPTNAME} [options] | <groupId> <artifactId> <packageName>"
    echo
    echo "If you do not specify \"groupId\", \"artifactId\" and \"packageName\" default values will be used."
    echo
@@ -35,7 +37,7 @@ fi
 
 if [ -z "$2" ]
 then
-  ARTIFACT="test"
+  ARTIFACT="app"
 else
   ARTIFACT="$2"
 fi

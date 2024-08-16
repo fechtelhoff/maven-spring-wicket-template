@@ -5,10 +5,6 @@ $h1 ${artifactId}
 From [Apache Wicket Quickstart](https://wicket.apache.org/start/quickstart.html)
 
 $h2 Links
-
-***Project***
-- [Start Page](http://127.0.0.1:8080/${artifactId}/)
-
 ***Wicket***
 - [Wicket Homepage](http://wicket.apache.org/)
 - [Wicket User Guide (9.x)](https://ci.apache.org/projects/wicket/guide/9.x/single.html)
@@ -22,7 +18,6 @@ $h2 Links
 - [Wicket-Bootstrap](https://github.com/l0rdn1kk0n/wicket-bootstrap)
 - [Bootswatch (Themes)](https://bootswatch.com/)
 - [Boot Snipp](https://bootsnipp.com/)
-- [Font Awesome](https://fontawesome.com/)
 
 ***HTML***
 - [SelfHTML](https://selfhtml.org/) - [Farbpalette](https://wiki.selfhtml.org/wiki/Grafik/Farbpaletten)
@@ -32,19 +27,3 @@ $h2 Links
 - [W3 Schools](https://www.w3schools.com/)
 - [Mozilla Developers](https://developer.mozilla.org/de/)
 - [Dev Docs](https://devdocs.io/)
-
-$h2 VM Options
-
-```
--Dfile.encoding=UTF-8
--Dconsole.encoding=UTF-8
--Xms512m
--Xmx4096m
--Dwicket.configuration=development
-```
-
-$h2 Useful Maven Commands
-
-```bash
-mvn versions:display-property-updates
-```

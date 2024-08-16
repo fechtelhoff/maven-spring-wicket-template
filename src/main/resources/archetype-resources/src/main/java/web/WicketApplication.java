@@ -14,7 +14,7 @@ import de.agilecoders.wicket.webjars.WicketWebjars;
 import de.agilecoders.wicket.webjars.settings.WebjarsSettings;
 
 @ApplicationInitExtension
-public class WicketApplicationConfig implements WicketApplicationInitConfiguration {
+public class WicketApplication implements WicketApplicationInitConfiguration {
 
 	@Override
 	public void init(final WebApplication webApplication) {

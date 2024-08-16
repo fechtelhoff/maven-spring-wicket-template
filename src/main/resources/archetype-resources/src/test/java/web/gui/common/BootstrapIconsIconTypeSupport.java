@@ -6,44 +6,31 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import org.apache.wicket.request.resource.ResourceReference;
-import org.apache.wicket.util.tester.WicketTester;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-import ${package}.web.WicketTestApplication;
+import ${package}.web.gui.common.BootstrapIconsCssResourceReference;
 import io.github.classgraph.ClassGraph;
 import io.github.classgraph.Resource;
 import io.github.classgraph.ScanResult;
 
 /**
- * Dieser Test erzeugt aus der über WebJars eingebunden Resource der Bootstrap-Icons automatische
+ * Erzeugt aus der über WebJars eingebunden Resource der Bootstrap-Icons automatische
  * die Java Variablendeklarationen für die Icon-Types. Der Output muss manuell in die Klasse
  * <pre>BootstrapIconsIconType</pre> eingefügt werden.
  * <p/>
- * Dies sollte immer dann ausgeführt werden, wenn eine neue Version der Bootstrap-Icons eingebunden wird.
+ * Sollte immer dann ausgeführt werden, wenn eine neue Version der Bootstrap-Icons eingebunden wird.
  */
-@Disabled
-class BootstrapIconsIconTypeTest {
+public class BootstrapIconsIconTypeSupport {
 
 	public static final String SPACE = " ";
 	public static final String QUOTATION_MARK = "\"";
 
-	@SuppressWarnings({"FieldCanBeLocal", "unused"})
-	private WicketTester tester;
-
-	@BeforeEach
-	void setUp() {
-		tester = new WicketTester(new WicketTestApplication());
+	public static void main(String[] args) throws IOException {
+		new BootstrapIconsIconTypeSupport().run();
 	}
 
-	@Test
-	void test() throws IOException {
+	private void run() throws IOException {
 		final ResourceReference resourceReference = BootstrapIconsCssResourceReference.getInstance();
 
 		final List<String> cssFileContent = getResourceContent(resourceReference);
-		Assertions.assertNotNull(cssFileContent);
-		Assertions.assertFalse(cssFileContent.isEmpty());
 
 		final List<String> cssElements = cssFileContent.stream()
 			.filter(e -> e.startsWith(".bi-"))

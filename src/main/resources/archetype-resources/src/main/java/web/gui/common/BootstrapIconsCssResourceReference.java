@@ -13,7 +13,7 @@ import de.agilecoders.wicket.webjars.request.resource.WebjarsCssResourceReferenc
  * <dependency>
  *     <groupId>org.webjars.npm</groupId>
  *     <artifactId>bootstrap-icons</artifactId>
- *     <version>1.8.1</version>
+ *     <version>1.11.1</version>
  * </dependency>
  * </pre>
  * <p/>
@@ -27,6 +27,7 @@ public class BootstrapIconsCssResourceReference extends WebjarsCssResourceRefere
 		super("bootstrap-icons/current/font/bootstrap-icons.css");
 	}
 
+	@SuppressWarnings("SameReturnValue")
 	public static ResourceReference getInstance() {
 		return INSTANCE;
 	}

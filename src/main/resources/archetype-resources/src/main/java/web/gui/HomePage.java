@@ -4,7 +4,6 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.model.Model;
 import com.giffing.wicket.spring.boot.context.scan.WicketHomePage;
 import ${package}.web.gui.page.BaseWebPage;
-import ${package}.web.gui.panel.WicketSettingsPanel;
 
 @WicketHomePage
 @SuppressWarnings("java:S110") // java:S110 -> Inheritance tree of classes should not be too deep.

@@ -14,7 +14,7 @@ public final class WicketApplicationPrettyUrlConfig {
 	static {
 		//@formatter:off
 
-		CONFIG.put("/home", HomePage.class);
+		CONFIG.put("/home",   HomePage.class);
 		CONFIG.put("/second", SecondPage.class);
 		CONFIG.put("/info",   InfoPage.class);
 

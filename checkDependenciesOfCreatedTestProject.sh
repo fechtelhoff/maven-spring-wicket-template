@@ -6,7 +6,7 @@ echo "# Start"
 echo "###############################################################################"
 echo
 
-cd ./target/test-classes/projects/it1/project/test || exit
+cd ./target/test-classes/projects/it1/project/app || exit
 pwd
 
 mvn versions:display-property-updates

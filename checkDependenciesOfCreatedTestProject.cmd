@@ -6,7 +6,7 @@ echo # Start - %~n0%~x0 (%0)
 echo ###############################################################################
 echo.
 
-cd ./target/test-classes/projects/it1/project/test
+cd ./target/test-classes/projects/it1/project/app
 
 mvn versions:display-property-updates
 
